@@ -1,0 +1,28 @@
+$back-color: #1027A8;
+
+#navbar-wrapper {
+  background-color: $back-color;
+  border-bottom: 3px solid #00A6FF;
+  font-size: 2.5em;
+
+
+}
+
+#brand-name {
+  font-weight: bold;
+  color: #DCDCDC;
+}
+
+#brand-subtitle {
+  color: #B8B8B8;
+  display: none;
+  font-size: .6em;
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  #brand-subtitle {
+    display: inline-block;
+  }
+
+}

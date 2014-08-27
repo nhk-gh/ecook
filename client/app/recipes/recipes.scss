@@ -1,0 +1,104 @@
+$border-radius: 10px;
+
+.main-panel {
+  position: relative;
+  top: -20px;
+  color: $main-color;
+  background-color: $main-back-color;
+  min-height: 400px;
+
+  @include main-box-shadow();
+
+  a {
+    color: $main-color;
+    font-weight: bold;
+    display: inline-block;
+  }
+  a:hover {
+    text-shadow: 0px 0px 10px $hero-color;
+    text-decoration: none;
+    //background-color: $main-back-color;
+    //border: 1px solid transparent;
+    //border-radius: 10px;
+  }
+}
+
+#sm-recipe-navbar {
+  background-color: floralwhite;
+  padding: 12px;
+
+  @include border-radius(10px);
+}
+
+#search-box {
+  border-radius: 10px;
+  border: 1px solid $main-color;
+  position: relative;
+  background-color: white;
+  height: 25px;
+
+  #review-search {
+    position: relative;
+    left: 5px;
+    top: -3px;
+    outline: none;
+    border: none;
+    text-indent: 0px;
+    //color: $review-color;
+  }
+
+  button {
+    position: relative;
+    top: -2px;
+  }
+}
+
+.sm-recipe-wrapper {
+  background-color: white;
+  border: 1px solid $main-color;
+  padding: 10px;
+
+
+  @include border-radius($border-radius);
+
+  .sm-recipe-title {
+    position: relative;
+    top:-10px;
+    margin-left: -10px;
+    margin-right: -10px;
+    text-align: center;
+    font-size: larger;
+    background-color: floralwhite;
+    border-bottom: 1px solid $main-color;
+    border-top-right-radius: $border-radius;
+    -moz-border-radius-topright: $border-radius;
+    -webkit-border-top-right-radius: $border-radius;
+    border-top-left-radius: $border-radius;
+    -moz-border-radius-topleft: $border-radius;
+    -webkit-border-top-left-radius: $border-radius;
+  }
+  .sm-recipe-body{
+    overflow-y: auto;
+    max-height: 128px;
+  }
+  .img-thumbnail {
+    float:left;
+    position: relative;
+    width: 20%;
+    max-width: 128px;
+    height: auto;
+   // border: 1px solid #008000;
+  }
+  .sm-recipe-description {
+    display: inline-block;
+    position: relative;
+    width:60%;
+    height: auto;
+    padding-left: 15px;
+    padding-right: 10px;
+    float:left;
+
+
+   // border: 1px solid red;
+  }
+}

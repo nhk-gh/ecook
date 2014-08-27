@@ -1,0 +1,34 @@
+$border-radius: 10px;
+
+.recipe-wrapper {
+  background-color: white;
+  border: 2px solid $main-color;//#DDC3A1;
+  padding: 10px;
+  min-height: 300px;
+  margin-top: 20px;
+  position: relative;
+
+  @include border-radius($border-radius);
+
+  .recipe-title {
+    position: relative;
+    top:-10px;
+    margin-left: -10px;
+    margin-right: -10px;
+    text-align: center;
+    font-size: larger;
+    background-color: floralwhite;
+    border-bottom: 1px solid $main-color;
+    border-top-right-radius: $border-radius;
+    -moz-border-radius-topright: $border-radius;
+    -webkit-border-top-right-radius: $border-radius;
+    border-top-left-radius: $border-radius;
+    -moz-border-radius-topleft: $border-radius;
+    -webkit-border-top-left-radius: $border-radius;
+  }
+  .recipe-body{
+    overflow-y: auto;
+    max-height: 128px;
+  }
+}
+
