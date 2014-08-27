@@ -7,7 +7,66 @@
         <div class="recipe-title">
           <span><strong>{{ recipe.name }}</strong></span>
         </div>
-        <div class="row recipe-body"></div>
+        <div class="recipe-body">
+          <!-- category, ... , rating -->
+          <div class="row">
+            <div class="col-md-8 col-sm-8 col-xs-7">
+              <div class="col-md-4 col-sm-4 col-xs-12">
+                <strong>Category:</strong> {{ recipe.category }}
+              </div>
+              <div class="col-md-4 col-sm-4 col-xs-12">
+                <strong>Cousine:</strong> {{ recipe.cousine }}
+              </div>
+              <div class="col-md-4 col-sm-4 col-xs-12">
+                <span class="glyphicon glyphicon-time"> {{ recipe.duration }} min</span>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-5">
+              <gradient-rating overall="recipe.rating" ratings="recipe.ratings"
+                               viewed="recipe.viewed" ></gradient-rating>
+            </div>
+          </div>
+
+          <!-- ingredients -->
+          <div class="row">
+            <div class="col-md-8 col-sm-8 col-xs-8">
+              <div class="col-md-12">
+                <strong>Ingredients:</strong>
+                <br/>
+                <div class="row">
+                  <div class="col-md-6 col-sm-6 col-xs-12" ng-repeat="ing in recipe.ingredients">
+                       {{ $index + 1 }}
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-4">
+
+            </div>
+          </div>
+
+          <!-- instructions -->
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <div class="col-md-12">
+                <strong>Instructions:</strong>
+                <br/>
+                <div class="row" ng-repeat="inst in recipe.instructions">
+                  <div class="col-md-1 col-sm-1 col-xs-1">
+                    {{ $index + 1 }}.
+                  </div>
+                  <div class="col-md-8 col-sm-8 col-xs-8">
+                     {{ inst.step }}
+                  </div>
+                  <div class="col-md-3 col-sm-3 col-xs-3">
+                    <!-- from  http://www.iconka.com -->
+                    <img class="img-thumbnail recipe-step-img" ng-src='assets/images/cat-food-hearts-icon-128x128.png'/>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

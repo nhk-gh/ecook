@@ -5,16 +5,25 @@ var mongoose = require('mongoose'),
 
 var RecipeSchema = new Schema({
   name: String,
-  category: String,     // snack (appetizer), salad, soup etc.
+  category: String,       // snack (appetizer), salad, soup etc.
   cousine: String,
-  description: String,  //about recipe
-  duration: Number,     // cooking time in minutes
-  ingredients: [{ name: String, qtty: String, note: String }],
-  instructions: String, // how to cook
-  grant: String,        // who grant(give) recipe
-  date:{ type: Date, default: Date.now }, // when recipe added to site
-  notes: [String],      // additional notes about recipe
-  images: [String],
+  description: String,    //about recipe
+  duration: Number,       // cooking time in minutes
+  ingredients: [{
+    name: String,
+    qtty: String,
+    note: String
+  }],
+  instructions: [{         // how to cook + link to image
+    step:String,
+    image: String
+  }],
+  grant: String,          // who grant(give) recipe
+  date:{                  // when recipe added to site
+    type: Date,
+    default: Date.now
+  },
+  notes: [String],        // additional notes about recipe
   rating: Number,
   ratings: Number,
   viewed: Number

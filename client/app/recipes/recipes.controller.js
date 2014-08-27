@@ -7,6 +7,7 @@ angular.module('ecookingApp')
     recipes.getRecipes()
       .then(function(recipes) {
         $scope.recipes = recipes;
+        console.log(recipes)
       },
       function(status){
 

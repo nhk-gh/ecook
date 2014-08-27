@@ -15,14 +15,17 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
     padding: 0.2em 0;
 }
 body {
-  background-color: #E1D4C0;
+ background-color: #E1D4C0;
 }
+
 // Component styles are injected through grunt
 // injector
-@import 'colors.scss';
+@import 'common.scss';
 @import 'gradientRatingDirective/gradientRating.scss';
 @import 'main/main.scss';
 @import 'recipe/recipe.scss';
 @import 'recipes/recipes.scss';
 @import  '../components/navbar/navbar.scss';
 // endinjector
+
+

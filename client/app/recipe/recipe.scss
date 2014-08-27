@@ -5,7 +5,6 @@ $border-radius: 10px;
   border: 2px solid $main-color;//#DDC3A1;
   padding: 10px;
   min-height: 300px;
-  margin-top: 20px;
   position: relative;
 
   @include border-radius($border-radius);
@@ -27,8 +26,33 @@ $border-radius: 10px;
     -webkit-border-top-left-radius: $border-radius;
   }
   .recipe-body{
-    overflow-y: auto;
-    max-height: 128px;
+    //font-size: 1em;
+  }
+
+  .recipe-body > .row{
+    margin-right: 0px;
+    margin-left: 0px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .recipe-body > .row:nth-of-type(even){
+    background-color: #f8f8f8;
   }
 }
 
+
+
+@media (max-width: 768px){
+  .recipe-wrapper{
+    font-size: 90%;
+  }
+
+}
+@media (max-width: 468px){
+  .recipe-wrapper{
+    font-size: 80%;
+  }
+  .recipe-step-img {
+     display: none;
+   }
+}

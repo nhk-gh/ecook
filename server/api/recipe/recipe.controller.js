@@ -17,6 +17,7 @@ var mongoose = require('mongoose');
 exports.index = function(req, res) {
   Recipe.find({}, function (err, rcps) {
     if(err) { return handleError(res, err); }
+    console.log(rcps)
     return res.json(200, rcps);
   });
 };
