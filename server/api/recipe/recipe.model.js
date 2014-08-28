@@ -18,7 +18,10 @@ var RecipeSchema = new Schema({
     step:String,
     image: String
   }],
-  grant: String,          // who grant(give) recipe
+  grant: {                // who grant(give) recipe
+    name:String,
+    image:String
+  },
   date:{                  // when recipe added to site
     type: Date,
     default: Date.now

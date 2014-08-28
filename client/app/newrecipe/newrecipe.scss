@@ -1,0 +1,47 @@
+#add-recipe-form {
+  legend {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: $main-color;
+  }
+
+  textarea {
+    resize: none;
+  }
+
+  #new-recipe-ingredients-tbl {
+    width: 100%;
+
+    #ingredient-column-1 {
+      width: 40%;
+    }
+    #ingredient-column-2 {
+      width: 40%;
+    }
+    #ingredient-column-3 {
+      width: 15%;
+    }
+    #ingredient-column-4 {
+      width: 5%;
+    }
+
+    thead {
+      background-color: $main-back-color;
+    }
+    th, tr, td {
+      border: 1px solid $main-color;
+
+    }
+    th {
+      text-align: center;
+    }
+    .table-input {
+      width: 100%;
+      border:none;
+      @include border-radius(0);
+    }
+    .table-input:focus {
+      border: 1px solid #add8e6;
+    }
+  }
+}

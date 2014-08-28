@@ -6,7 +6,7 @@ $border-radius: 10px;
 
   @include border-radius(10px);
 }
-
+/*
 #search-box {
   border-radius: 10px;
   border: 1px solid $main-color;
@@ -29,7 +29,7 @@ $border-radius: 10px;
     top: -2px;
   }
 }
-
+*/
 .sm-recipe-wrapper {
   background-color: white;
   border: 1px solid $main-color;

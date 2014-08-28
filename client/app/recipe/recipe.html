@@ -66,6 +66,24 @@
               </div>
             </div>
           </div>
+
+          <!-- notes -->
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <div class="col-md-12">
+                <strong>Notes:</strong>
+                <br/>
+                <div class="row" ng-repeat="note in recipe.notes">
+                  <div class="col-md-1 col-sm-1 col-xs-1">
+                    {{ $index + 1 }}.
+                  </div>
+                  <div class="col-md-11 col-sm-11 col-xs-11">
+                     {{ note }}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
