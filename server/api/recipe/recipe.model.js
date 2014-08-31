@@ -5,6 +5,7 @@ var mongoose = require('mongoose'),
 
 var RecipeSchema = new Schema({
   name: String,
+  avatar: String,
   category: String,       // snack (appetizer), salad, soup etc.
   cousine: String,
   description: String,    //about recipe
@@ -24,7 +25,7 @@ var RecipeSchema = new Schema({
   },
   date:{                  // when recipe added to site
     type: Date,
-    default: Date.now
+    date: Date.now
   },
   notes: [String],        // additional notes about recipe
   rating: Number,

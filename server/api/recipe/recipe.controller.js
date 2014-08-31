@@ -35,6 +35,8 @@ exports.show = function(req, res) {
 
 // Creates a new feature in the DB.
 exports.create = function(req, res) {
+  console.log(req.body);
+  console.log(req.params);
   Recipe.create(req.body, function(err, thing) {
     if(err) { return handleError(res, err); }
     return res.json(201, thing);

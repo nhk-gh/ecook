@@ -50,14 +50,38 @@ Feature.count(function(err, count){
   }
 });
 
+var Category = require('../api/category/category.model');
+
+Category.find({}).remove(function() {
+  Category.create(
+    { name: 'Appetizer' },
+    { name: 'BBQ' },
+    { name: 'Dessert' },
+    { name: 'Salad' },
+    { name: 'Soup' },
+    { name: 'Sauce' },
+    { name: 'Main dish' },
+    { name: 'Cake' },
+    { name: 'Fish & See food' },
+    { name: 'Chicken' },
+    { name: 'Beef' },
+    { name: 'Lamb' },
+    { name: 'Rice' },
+    { name: 'Potato' },
+    { name: 'Breakfast' },
+    { name: 'Lunch' }
+  );
+});
+
 var Recipe = require('../api/recipe/recipe.model');
 
 Recipe.find({}).remove(function() {
   Recipe.create({
     name: 'Salmon Tartare with Avocado, Olives & Tarragon',
+    avatar: '',
     category: 'snack',
     cousine: 'French',
-    description: 'Serve the salmon tartare with crispy flatbread, crackers, or crostini. You could make individual canapés with the tartare, if you prefer. ',
+    description: 'Serve the salmon tartare with crispy flatbread, crackers, or crostini. You could make individual canapés with the tartare, if you prefer.',
     duration: 30,
     ingredients: [
       { name: 'Salmon', qtty: '6 oz', note:'skin removed' },
@@ -70,24 +94,25 @@ Recipe.find({}).remove(function() {
       { name: 'Flaky Sea Salt', qtty: 'to your taste', note: '' },
       { name: 'Freshly Ground Pepper', qtty: 'to your taste', note: '' }
     ],
-    instructions:
-      [{step:'Place the salmon in the freezer for about 15 minutes while you prep the rest of the ingredients. '+
-          'The fish will be much easier to cut if it is very cold.', image:''},
-        {step:'Remove the tarragon leaves from stem and smash into a paste, using mortar and pestle or a mini '+
-         'food processor. Combine with about 1 Tbsp. olive oil and reserve.', image:''},
-        {step:'Dice  the salmon in ¼ in. or smaller cubes. Combine with sliced scallions and lemon zest in a '+
-         'small bowl. Dress with about a ½ tsp. of olive oil, sea salt and pepper, to taste.', image:''},
-        {step:'Form the tartare. If using a ring mold, start with the avocado base. Arrange slices of avocado '+
-         'to cover the bottom. Sprinkle the avocado with a little lemon juice to avoid discoloration '+
-         'and season lightly with salt. Spread the minced olives over the avocado, and top with the '+
-         'salmon mixture. I used a squat mason jar, lined with plastic wrap (helps get it out in one '+
-         'piece) and turned it upside-down to unmold it, so I worked in reverse, packing the salmon '+
-         'in first, then the olives, ending with the avocado. Once you\'ve filled your mold, '+
-         'refrigerate for 15 minutes or longer to help it firm up and hold together.',  image:''},
-        {step:'Remove ring mold or invert jar onto a plate. Smear the tarragon oil across the plate or serve in '+
-         'a spoon to use as a condiment with the tartare.', image:''}],
-    grant: 'Ilia Krivoruk',
-    date:{ type: Date, default: Date.now },
+    instructions:[
+      {step:'Place the salmon in the freezer for about 15 minutes while you prep the rest of the ingredients. '+
+        'The fish will be much easier to cut if it is very cold.', image:''},
+      {step:'Remove the tarragon leaves from stem and smash into a paste, using mortar and pestle or a mini '+
+       'food processor. Combine with about 1 Tbsp. olive oil and reserve.', image:''},
+      {step:'Dice  the salmon in ¼ in. or smaller cubes. Combine with sliced scallions and lemon zest in a '+
+       'small bowl. Dress with about a ½ tsp. of olive oil, sea salt and pepper, to taste.', image:''},
+      {step:'Form the tartare. If using a ring mold, start with the avocado base. Arrange slices of avocado '+
+       'to cover the bottom. Sprinkle the avocado with a little lemon juice to avoid discoloration '+
+       'and season lightly with salt. Spread the minced olives over the avocado, and top with the '+
+       'salmon mixture. I used a squat mason jar, lined with plastic wrap (helps get it out in one '+
+       'piece) and turned it upside-down to unmold it, so I worked in reverse, packing the salmon '+
+       'in first, then the olives, ending with the avocado. Once you\'ve filled your mold, '+
+       'refrigerate for 15 minutes or longer to help it firm up and hold together.',  image:''},
+      {step:'Remove ring mold or invert jar onto a plate. Smear the tarragon oil across the plate or serve in '+
+       'a spoon to use as a condiment with the tartare.', image:''}
+    ],
+    grant: {name:'Ilia Krivoruk', image:''},
+    date:{ type: Date, date: Date.now },
     notes: '',
     rating: 5,
     ratings: 1,
