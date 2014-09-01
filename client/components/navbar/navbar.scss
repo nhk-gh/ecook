@@ -4,17 +4,28 @@ $back-color: #1027A8;
   background-color: $back-color;
   border-bottom: 3px solid #00A6FF;
   font-size: 2.5em;
+
+  div div button{
+    border:none;
+  }
+  div div button:hover{
+    background-color: inherit;
+    -webkit-box-shadow: inset 0px 0px 30px 4px #33A6FF;
+    -moz-box-shadow:    inset 0px 0px 30px 4px #33A6FF;
+    box-shadow:         inset 0px 0px 30px 4px #33A6FF;
+  }
 }
 
 #brand-name {
   font-weight: bold;
   color: #DCDCDC;
+  font-size: 1em;
 }
 
 #brand-subtitle {
   color: #B8B8B8;
   display: none;
-  font-size: .6em;
+  font-size:0.6em;
 }
 
 #search-box {
@@ -24,7 +35,8 @@ $back-color: #1027A8;
   display: inline-block;
   background-color: white;
   height: 25px;
-  top:15px;
+  margin-top:15px;
+  margin-bottom:15px;
   font-size: 0.4em;
 
   #review-search {

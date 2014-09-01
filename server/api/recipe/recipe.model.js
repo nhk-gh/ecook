@@ -5,8 +5,7 @@ var mongoose = require('mongoose'),
 
 var RecipeSchema = new Schema({
   name: String,
-  avatar: String,
-  category: String,       // snack (appetizer), salad, soup etc.
+  category: {name:String},       // snack (appetizer), salad, soup etc.
   cousine: String,
   description: String,    //about recipe
   duration: Number,       // cooking time in minutes

@@ -40,7 +40,19 @@ $border-radius: 10px;
   }
 }
 
+#recipe-ingredients-tbl {
+  width: 100%;
 
+  #ingredient-col-1 {
+    width: 3%;
+  }
+  #ingredient-col-2 {
+    width: 77%;
+  }
+  #ingredient-col-3 {
+    width: 20%;
+  }
+}
 
 @media (max-width: 768px){
   .recipe-wrapper{
@@ -55,4 +67,7 @@ $border-radius: 10px;
   .recipe-step-img {
      display: none;
    }
+  th, tr, td {
+    border: 1px solid $main-color;
+  }
 }

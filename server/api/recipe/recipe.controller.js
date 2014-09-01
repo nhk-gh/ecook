@@ -17,7 +17,6 @@ var mongoose = require('mongoose');
 exports.index = function(req, res) {
   Recipe.find({}, function (err, rcps) {
     if(err) { return handleError(res, err); }
-    //console.log(rcps)
     return res.json(200, rcps);
   });
 };
@@ -35,10 +34,10 @@ exports.show = function(req, res) {
 
 // Creates a new feature in the DB.
 exports.create = function(req, res) {
-  console.log(req.body);
-  console.log(req.params);
-  Recipe.create(req.body, function(err, thing) {
+  //console.log(req.body.recipe);
+  Recipe.create(req.body.recipe, function(err, thing) {
     if(err) { return handleError(res, err); }
+    //console.log(thing);
     return res.json(201, thing);
   });
 };
