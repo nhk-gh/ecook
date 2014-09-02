@@ -7,6 +7,9 @@ angular.module('ecookingApp')
     recipes.getRecipes()
       .then(function(recipes) {
         $scope.recipes = recipes;
+        $scope.recipes.forEach(function(itm){
+          itm.rating = itm.rating.toFixed(1);
+        });
       },
       function(status){
 

@@ -75,9 +75,9 @@ Category.find({}).remove(function() {
 
 var Recipe = require('../api/recipe/recipe.model');
 
-//Recipe.find({}).remove(function() {
-Feature.count(function(err, count){
-  if (count === 0) {
+Recipe.find({}).remove(function() {
+//Feature.count(function(err, count){
+//  if (count === 0) {
     Recipe.create({
       name: 'Salmon Tartare with Avocado, Olives & Tarragon',
       category: {name:'snack'},
@@ -119,5 +119,5 @@ Feature.count(function(err, count){
       ratings: 1,
       viewed: 1
     });
-  }
+  //}
 });

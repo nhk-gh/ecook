@@ -8,16 +8,18 @@ angular.module('ecookingApp')
     recipe.getRecipe($routeParams.id)
       .then(function(recipe) {
         $scope.recipe = recipe;
-        $scope.arrangeIngredients();
+        recipe.rating = recipe.rating.toFixed(1);
+        arrangeIngredients();
+        console.log($scope.recipe)
       },
       function(status){
 
       });
 
-    $scope.arrangeIngredients = function(){
+    var arrangeIngredients = function(){
       var middle = Math.ceil($scope.recipe.ingredients.length / 2);
       var mod = $scope.recipe.ingredients.length % 2;
-      console.log(mod)
+      //console.log(mod)
       for (var i=0; i<middle; i++){
         $scope.ingredients.push($scope.recipe.ingredients[i]);
 
@@ -26,6 +28,17 @@ angular.module('ecookingApp')
         }
       }
 
-      console.log($scope.ingredients)
+      //console.log($scope.recipe)
     };
+
+    $scope.$on('rate-it', function(evt, args){
+      recipe.updateRecipe($scope.recipe, args)
+        .then(function(data) {
+          $scope.recipe = data;
+          arrangeIngredients();
+        },
+        function(status) {
+
+        });
+    })
   });

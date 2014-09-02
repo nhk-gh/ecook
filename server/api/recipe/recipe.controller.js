@@ -48,7 +48,21 @@ exports.update = function(req, res) {
   Recipe.findById(req.params.id, function (err, thing) {
     if (err) { return handleError(res, err); }
     if(!thing) { return res.send(404); }
-    var updated = _.merge(thing, req.body);
+
+    //var updated = _.merge(thing, req.body.recipe);
+
+    function extend(target) {
+      var sources = [].slice.call(arguments, 1);
+
+      sources.forEach(function (source) {
+        for (var prop in source) {
+          target[prop] = source[prop];
+        }
+      });
+      return target;
+    };
+    var updated = extend(thing, req.body.recipe )
+
     updated.save(function (err) {
       if (err) { return handleError(res, err); }
       return res.json(200, thing);
