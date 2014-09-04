@@ -3,10 +3,10 @@
 angular.module('ecookingApp')
   .factory('recipes', function ($q, $http, $log) {
     return {
-      getRecipes: function(){
+      getRecipes: function(searchCriteria){
         var deferred = $q.defer();
 
-        $http({method:'GET', url:'api/recipe', cache: false})
+        $http({method:'GET', url:'api/recipe', params:{search:searchCriteria}, cache: false})
           .success(function(data){
             deferred.resolve(data);
           })
@@ -17,6 +17,6 @@ angular.module('ecookingApp')
 
         return deferred.promise;
       }
-    }
+    };
   });
 

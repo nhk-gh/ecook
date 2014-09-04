@@ -10,9 +10,9 @@ angular.module('ecookingApp')
         $scope.recipe = recipe;
         recipe.rating = recipe.rating.toFixed(1);
         arrangeIngredients();
-        console.log($scope.recipe)
+        //console.log($scope.recipe)
       },
-      function(status){
+      function(){
 
       });
 
@@ -35,10 +35,11 @@ angular.module('ecookingApp')
       recipe.updateRecipe($scope.recipe, args)
         .then(function(data) {
           $scope.recipe = data;
+          $scope.recipe.rating = $scope.recipe.rating.toFixed(1);
           arrangeIngredients();
         },
-        function(status) {
+        function() {
 
         });
-    })
+    });
   });

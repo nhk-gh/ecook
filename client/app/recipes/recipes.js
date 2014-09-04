@@ -6,5 +6,9 @@ angular.module('ecookingApp')
       .when('/recipes', {
         templateUrl: 'app/recipes/recipes.html',
         controller: 'RecipesCtrl'
+      })
+      .when('/recipes/:search', {
+        templateUrl: 'app/recipes/recipes.html',
+        controller: 'RecipesCtrl'
       });
   });

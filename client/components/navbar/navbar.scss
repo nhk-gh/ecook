@@ -5,10 +5,10 @@ $back-color: #1027A8;
   border-bottom: 3px solid #00A6FF;
   font-size: 2.5em;
 
-  div div button{
+  div div button[class="navbar-toggle"]{
     border:none;
   }
-  div div button:hover{
+  div div button[class="navbar-toggle"]:hover{
     background-color: inherit;
     -webkit-box-shadow: inset 0px 0px 30px 4px #33A6FF;
     -moz-box-shadow:    inset 0px 0px 30px 4px #33A6FF;

@@ -56,8 +56,8 @@
         <li ng-show="isLoggedIn()" ng-class="{active: isActive('/logout')}"><a href="" ng-click="logout()">Logout</a></li-->
         <li>
           <div class="pull-right" id="search-box">
-            <input type="text"  placeholder="Search" id="review-search" />
-            <button class="btn btn-link btn-sm" >
+            <input type="text"  placeholder="Search" id="review-search" ng-model="searchCriteria"/>
+            <button class="btn btn-link btn-sm" ng-click="search(searchCriteria)">
               <span class="glyphicon glyphicon-search"></span>
             </button>
           </div>

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('ecookingApp').directive('gradientRating', function (LIMITS, $timeout, $rootScope) {
+angular.module('ecookingApp').directive('gradientRating', function (LIMITS, $timeout) {
     return {
       templateUrl: 'app/gradientratingDirective/gradientRating.html',
       restrict: 'E',
@@ -13,13 +13,13 @@ angular.module('ecookingApp').directive('gradientRating', function (LIMITS, $tim
 
       link: function(scope, element, attrs) {
         var el = element.find('.rating-gradient');
-        var rating;
+        var elW = parseInt(el.css('width'));
 
         scope.userrating = 0;
 
         var drawRatingBar = function(gradient) {
           var color;
-          var elW = parseInt(el.css('width'));
+
           var pos = 100*(gradient.pos/elW);
 
           if (gradient.mono) {
@@ -34,7 +34,7 @@ angular.module('ecookingApp').directive('gradientRating', function (LIMITS, $tim
             var r = LIMITS.MAX_RATING - pos/(100/LIMITS.MAX_RATING);
             if (r<1){ r=1;}
             scope.userrating = r.toFixed(1);
-          })
+          });
 
           el.css('background', color);
         };
@@ -43,7 +43,7 @@ angular.module('ecookingApp').directive('gradientRating', function (LIMITS, $tim
           if (scope.ratings === 0) {
             drawRatingBar({pos:0, mono:true});
           } else {
-            rating = 100 - 100*(scope.overall / LIMITS.MAX_RATING);
+            var rating = elW - elW * (scope.overall / LIMITS.MAX_RATING);
             drawRatingBar({pos:rating, mono:false});
           }
         }, 100);
@@ -53,9 +53,9 @@ angular.module('ecookingApp').directive('gradientRating', function (LIMITS, $tim
         if (attrs.ratable === 'true') {
           var rateOn = false;
 
-          el.css('cursor','col-resize')
+          el.css('cursor','col-resize');
 
-          el.on('mousedown', function(e){
+          el.on('mousedown', function(){
             rateOn = true;
           })
           .on('mouseup', function(){
@@ -71,12 +71,12 @@ angular.module('ecookingApp').directive('gradientRating', function (LIMITS, $tim
           });
 
         } else {
-          el.css('cursor','default')
+          el.css('cursor','default');
         }
 
         scope.rateRecipe = function(){
           scope.$emit('rate-it', scope.userrating ) ;
-        }
+        };
       }
-    }
+    };
   });

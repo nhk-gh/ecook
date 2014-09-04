@@ -17,5 +17,5 @@ angular.module('ecookingApp')
 
         return deferred.promise;
       }
-    }
+    };
   });

@@ -18,10 +18,10 @@ angular.module('ecookingApp')
         return deferred.promise;
       },
 
-      updateRecipe: function(recipe, new_rating){
+      updateRecipe: function(recipe, newRating){
         var deferred = $q.defer();
 
-        recipe.rating = (recipe.rating * recipe.ratings + parseInt(new_rating)) / (recipe.ratings + 1);
+        recipe.rating = (recipe.rating * recipe.ratings + parseInt(newRating)) / (recipe.ratings + 1);
         recipe.ratings += 1;
 
         $http({method:'PUT', url:'api/recipe/'+recipe._id, data:{recipe:recipe}, params:{what:'rating'},cache: false})
@@ -35,5 +35,5 @@ angular.module('ecookingApp')
 
         return deferred.promise;
       }
-    }
+    };
   });

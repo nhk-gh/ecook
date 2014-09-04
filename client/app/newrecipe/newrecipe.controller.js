@@ -9,7 +9,7 @@ angular.module('ecookingApp').controller('NewRecipeCtrl',
       $scope.categories.unshift({name:'-- Select category --',_id: 0});
       $scope.newRecipe.category = $scope.categories[0];
     },
-    function(status){
+    function(){
       $scope.categories = ['Appetizer','Soup','Salad'];
     }
   );
@@ -97,9 +97,8 @@ angular.module('ecookingApp').controller('NewRecipeCtrl',
       function(data){
         console.log(data);
       },
-      function(status){
+      function(){
 
-      }
-    )
+      });
   };
 }]);
